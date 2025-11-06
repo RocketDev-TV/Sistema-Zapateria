@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Misiones</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>Misiones Pendientes</h1>
+            <a href="login.html" class="logout-btn">
+                <span class="material-icons">logout</span>
+            </a>
+        </header>
+
+        <!-- Contenido (Lista de Tareas) -->
+        <main class="app-content">
+            <ul class="task-list">
+
+                <!-- 
+                  TAREA #1: CREADA POR EL BOT (Traspaso)
+                  Esto es lo que el Gerente aceptó en el dashboard.
+                  DB: Es un registro en `pedido` (estado='CAPTURADO', origen=Tienda 14)
+                -->
+                <li class="task-item priority-high" onclick="location.href='operador_scan.html?task=surtido_traspaso'">
+                    <span class="material-icons task-icon">task_alt</span>
+                    <div class="task-info">
+                        <h3>Surtir Traspaso #T-1001</h3>
+                        <p>Urgente: Enviar a Tienda 9 (Bot)</p>
+                    </div>
+                </li>
+
+                <!-- 
+                  TAREA #2: Recepción de Pedido
+                  DB: Es un registro en `pedido` (estado='EN TRANSITO', destino=Tienda 14)
+                -->
+                <li class="task-item priority-normal" onclick="location.href='operador_scan.html?task=recibir_traspaso'">
+                    <span class="material-icons task-icon">inventory_2</span>
+                    <div class="task-info">
+                        <h3>Recibir Pedido #P-890</h3>
+                        <p>De: CEDIS Central</p>
+                    </div>
+                </li>
+                
+                <!-- 
+                  TAREA #3: Recepción de Proveedor (Entrada)
+                  DB: Es un registro en `entrada` (estado='PENDIENTE')
+                -->
+                <li class="task-item priority-low" onclick="location.href='operador_scan.html?task=recibir_proveedor'">
+                    <span class="material-icons task-icon">local_shipping</span>
+                    <div class="task-info">
+                        <h3>Recibir Proveedor</h3>
+                        <p>Factura: #F-12345</p>
+                    </div>
+                </li>
+
+            </ul>
+        </main>
+    </div>
+
+    <script src="/js/operador.js"></script>
+</body>
+</html>

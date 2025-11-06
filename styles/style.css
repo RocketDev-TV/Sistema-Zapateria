@@ -1,0 +1,259 @@
+/* --- HOJA DE ESTILOS ESTÁNDAR: "SmartFoot Hub" --- */
+
+/* 1. VARIABLES (Las mismas) */
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #4A4A4A;
+    --color-danger: #D92323;
+    --color-warning: #FFA500;
+    --color-success: #28a745;
+    --bg-color: #f4f7f6;
+    --surface-color: #ffffff;
+    --border-color: #e0e0e0;
+    --text-color: #333333;
+    --text-color-light: #666666;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                   Helvetica, Arial, sans-serif, "Apple Color Emoji", 
+                   "Segoe UI Emoji";
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. BASE Y DASHBOARD */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+h1 { color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;}
+h2 { color: var(--secondary-color); margin-bottom: 1rem; }
+h3 { color: var(--text-color); margin-bottom: 0.5rem; }
+
+/* Estilos de Tarjetas (KPIs) */
+.card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.kpi-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive */
+    gap: 20px; 
+}
+.kpi-card {
+    display: flex;
+    flex-direction: column;
+}
+.kpi-value { 
+    font-size: 2.8rem; 
+    font-weight: 700; 
+    margin: 0; 
+    line-height: 1.1;
+    padding-top: 10px;
+}
+.kpi-meta { 
+    font-size: 0.9rem; 
+    color: var(--text-color-light); 
+    margin: 0; 
+    margin-top: 5px;
+}
+.text-danger { color: var(--color-danger); }
+.text-warning { color: var(--color-warning); }
+.text-success { color: var(--color-success); }
+
+
+/* ===================================== */
+/* 3. ESTILOS DE LA GRÁFICA DE DONA "POWER BI" */
+/* ===================================== */
+
+.donut-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.donut-chart-container h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.donut-chart {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    background: conic-gradient(
+        var(--color-danger) 0% 42%, 
+        var(--color-success) 42% 100%
+    );
+}
+
+/* El "hoyo" de la dona */
+.donut-chart::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background-color: var(--surface-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1) inset;
+}
+
+/* El texto del centro */
+.donut-center-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color-light);
+    line-height: 1.3;
+}
+.donut-center-text .donut-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* La leyenda de la dona */
+.donut-legend {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* ===================================== */
+/* 4. ESTILOS DEL WIDGET DE CHAT (LO NUEVO) */
+/* ===================================== */
+
+/* --- La Burbuja Flotante --- */
+#chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+#chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+/* Punto de notificación (para simular alerta) */
+#chat-notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-danger);
+    border-radius: 50%;
+    border: 2px solid white;
+    display: none;
+}
+
+/* --- La Ventana del Chat --- */
+.chat-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+    
+    /* Animación de entrada */
+    transform-origin: bottom right;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+.chat-container.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+.chat-header h3 { font-size: 1.1rem; margin: 0; color: white; }
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.close-btn:hover { opacity: 1; }
+
+#chatbox {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #fafafa;
+}
+
+/* --- Mensajes (igual que antes) --- */
+.message { margin-bottom: 15px; display: flex; flex-direction: column; }
+.message p { max-width: 85%; padding: 10px 15px; border-radius: 18px; line-height: 1.4; font-size: 0.9rem; }
+.message.bot { align-items: flex-start; }
+.message.bot p { background-color: #e9ecef; color: var(--text-color); border-bottom-left-radius: 4px; }
+.message.bot strong { color: var(--primary-color); }
+.message.user { align-items: flex-end; }
+.message.user p { background-color: var(--primary-color); color: white; border-bottom-right-radius: 4px; }
+.message.user strong { display: none; }
+
+/* --- Área de Input (igual que antes) --- */
+.chat-input-area { display: flex; padding: 10px; background-color: var(--surface-color); border-top: 1px solid var(--border-color); }
+#userInput { flex-grow: 1; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 0.9rem; margin-right: 10px; }
+#userInput:focus { outline: none; border-color: var(--primary-color); }
+.btn { padding: 10px 15px; font-size: 0.9rem; border-radius: var(--border-radius); }

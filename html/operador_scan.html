@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Escáner</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Iconos -->
+    <link href="[https://fonts.googleapis.com/icon?family=Material+Icons](https://fonts.googleapis.com/icon?family=Material+Icons)" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <!-- Título dinámico -->
+            <h1 id="scan-title">Cargando Tarea...</h1>
+            <a href="operador_menu.html" class="logout-btn">
+                <span class="material-icons">arrow_back</span>
+            </a>
+        </header>
+
+        <!-- Contenido -->
+        <main class="app-content scanner-container">
+            
+            <!-- Simulador de cámara -->
+            <div id="scanner-preview">
+                <div class="scan-target"></div>
+            </div>
+
+            <!-- Lista de productos a escanear -->
+            <div class="scan-details">
+                <h3>Productos Pendientes:</h3>
+                <ul class="task-list" id="scan-list">
+                    <!-- Los items se agregarán dinámicamente con JS -->
+                    <!-- 
+                    Ejemplo:
+                    <li class="scan-item" id="item-SNK-001">
+                        <span>Tenis (SNK-001)</span>
+                        <span>0 / 10</span>
+                    </li>
+                    -->
+                </ul>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="scan-actions">
+                <button class="btn btn-primary btn-full-width" id="scan-button">
+                    Escanear SKU
+                </button>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="/js/operador.js"></script>
+</body>
+</html>
