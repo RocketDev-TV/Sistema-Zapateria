@@ -48,10 +48,8 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
 .btn-primary { background-color: var(--primary-color); color: white; }
 .btn-primary:hover { background-color: #004a80; }
 .btn-full-width { width: 100%; padding: 15px; font-size: 1.1rem; }
-/* NUEVO Estilo de botón de éxito */
 .btn-success { background-color: var(--color-success); color: white; }
 .btn-success:hover { background-color: #218838; }
-
 
 /* Tarjeta genérica */
 .card {
@@ -65,57 +63,13 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
     margin-bottom: 15px;
 }
 
-
 /* ===================================== */
-/* 3. ESTILOS: DASHBOARD GERENTE         */
+/* 3. ESTILOS: DASHBOARD (Se movió)      */
 /* ===================================== */
+/* Todo el código del dashboard (.dashboard-grid, .kpi-box, etc.)
+   se movió a "styles/dashboard.css"
+*/
 
-.dashboard-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-/* --- KPIs (Dona, etc.) --- */
-.kpi-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; 
-}
-.kpi-card { display: flex; flex-direction: column; }
-.kpi-value { font-size: 2.8rem; font-weight: 700; margin: 0; line-height: 1.1; padding-top: 10px; }
-.kpi-meta { font-size: 0.9rem; color: var(--text-color-light); margin: 0; margin-top: 5px; }
-.text-danger { color: var(--color-danger); }
-.text-warning { color: var(--color-warning); }
-.text-success { color: var(--color-success); }
-
-.donut-chart-container { align-items: center; justify-content: space-between; }
-.donut-chart-container h3 { text-align: center; width: 100%; }
-.donut-chart {
-    width: 180px; height: 180px; border-radius: 50%;
-    position: relative; display: flex; justify-content: center; align-items: center;
-    margin: 15px 0;
-    background: conic-gradient(
-        var(--color-danger) 0% 42%, 
-        var(--color-success) 42% 100%
-    );
-}
-.donut-chart::before {
-    content: ''; position: absolute;
-    width: 70%; height: 70%;
-    background-color: var(--surface-color);
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1) inset;
-}
-.donut-center-text {
-    position: relative; z-index: 1; text-align: center;
-    font-size: 0.9rem; font-weight: 600; color: var(--text-color-light);
-    line-height: 1.3;
-}
-.donut-center-text .donut-value { display: block; font-size: 2.2rem; font-weight: 700; line-height: 1.1; }
-.donut-legend { width: 100%; display: flex; justify-content: space-evenly; margin-top: 10px; }
-.legend-item { display: flex; align-items: center; font-size: 0.85rem; color: var(--text-color-light); }
-.legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
 
 /* --- Widget de Chat (Bot) --- */
 #chat-bubble {
@@ -167,7 +121,7 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
 
 
 /* ===================================== */
-/* 4. ESTILOS: APP OPERADOR (MÓVIL)      */
+/* 4. ESTILOS: APP OPERADOR (MÓVIL) 	 */
 /* ===================================== */
 
 /* Contenedor general para la app móvil */
@@ -180,6 +134,9 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    
+    /* ARREGLO: Colchón para que el FAB no tape la última tarjeta */
+    padding-bottom: 120px;
 }
 
 /* Header de la App */
@@ -354,7 +311,7 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
 
 
 /* ===================================== */
-/* 5. ESTILOS: LOGIN (MÓVIL)             */
+/* 5. ESTILOS: LOGIN (MÓVIL)           */
 /* ===================================== */
 
 /* Fondo de gradiente para el body de la pág de login */
