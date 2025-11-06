@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         chatWidget.classList.toggle("show");
         notificationDot.style.display = "none"; // Oculta la notificación al abrir
         
-        // Inicia el chat (el saludo proactivo) SÓLO la primera vez que se abre
         if (!chatInitialized) {
             initChat();
             chatInitialized = true;
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         chatbox.scrollTop = chatbox.scrollHeight;
     }
 
-    // 1. El bot saluda (AHORA SE LLAMA MANUALMENTE)
     function initChat() {
         setTimeout(() => {
             addMessage("SmartFoot Bot", botResponses.gancho);
@@ -83,6 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // (Opcional) Simular que el bot te busca primero
     setTimeout(() => {
         notificationDot.style.display = "block";
-    }, 5000); // A los 5 segundos, aparece una alerta en la burbuja
+    }, 5000);
 
 });
