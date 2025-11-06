@@ -26,7 +26,8 @@ function initLoginPage() {
 
         // Simulación
         if (user === "operador1" && pass === "1234") {
-            window.location.href = "operador_menu.html";
+            // ESTO ESTÁ BIEN
+            window.location.href = "html/operador_menu.html";;
         } else {
             errorMsg.style.display = "block";
         }
