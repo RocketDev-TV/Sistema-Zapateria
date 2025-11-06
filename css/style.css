@@ -57,11 +57,14 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
     padding: 24px;
     margin-bottom: 20px;
 }
+.form-group {
+    margin-bottom: 15px;
+}
 
 
 /* ===================================== */
 /* 3. ESTILOS: DASHBOARD GERENTE         */
-/* ===================================== */
+/* =im================================== */
 
 .dashboard-container {
     max-width: 1200px;
@@ -183,148 +186,154 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
     text-align: center;
     position: relative;
 }
-.app-header h1 {
-    color: white;
-    font-size: 1.3rem;
-    margin: 0;
-}
+.app-header h1 { color: white; font-size: 1.3rem; margin: 0; }
 .app-header .logout-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem; /* Icono */
-    cursor: pointer;
+    position: absolute; right: 10px; top: 50%;
+    transform: translateY(-50%); background: none; border: none;
+    color: white; font-size: 1.5rem; cursor: pointer;
 }
 
 /* Contenido principal (con scroll) */
-.app-content {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 20px;
-}
-
-/* --- Pantalla de Login --- */
-.login-container {
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
-.login-container h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-.form-group input[type="text"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-}
-.form-error {
-    color: var(--color-danger);
-    font-size: 0.9rem;
-    margin-top: 10px;
-    text-align: center;
-    display: none; /* Oculto por default */
-}
+.app-content { flex-grow: 1; overflow-y: auto; padding: 20px; }
 
 /* --- Pantalla de Menú (Misiones) --- */
-.task-list {
-    list-style: none;
-    padding: 0;
-}
+.task-list { list-style: none; padding: 0; }
 .task-item {
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 15px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    background-color: var(--surface-color); border: 1px solid var(--border-color);
+    border-radius: var(--border-radius); padding: 15px; margin-bottom: 10px;
+    cursor: pointer; transition: box-shadow 0.2s ease;
+    display: flex; align-items: center; gap: 15px;
 }
 .task-item:hover { box-shadow: var(--box-shadow); }
-.task-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-}
+.task-icon { font-size: 2rem; color: var(--primary-color); }
 .task-info h3 { font-size: 1.1rem; margin: 0; color: var(--text-color); }
 .task-info p { font-size: 0.9rem; margin: 0; color: var(--text-color-light); }
-
-/* Prioridad (basado en 'Surtido Reactivo') */
 .task-item.priority-high { border-left: 5px solid var(--color-danger); }
 .task-item.priority-normal { border-left: 5px solid var(--color-warning); }
 .task-item.priority-low { border-left: 5px solid var(--color-success); }
 
 
 /* --- Pantalla de Escaneo --- */
-.scanner-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
+.scanner-container { display: flex; flex-direction: column; height: 100%; }
 #scanner-preview {
-    width: 100%;
-    height: 250px;
-    background-color: #333;
-    border: 2px dashed var(--primary-color);
-    border-radius: var(--border-radius);
-    margin-bottom: 20px;
-    color: white;
+    width: 100%; height: 250px; background-color: #333;
+    border: 2px dashed var(--primary-color); border-radius: var(--border-radius);
+    margin-bottom: 20px; color: white; display: flex;
+    justify-content: center; align-items: center;
+    text-align: center; font-size: 1.1rem;
+}
+.scan-target { width: 60%; height: 100px; border: 2px dashed var(--color-danger); opacity: 0.7; }
+.scan-details h3 { text-align: center; font-size: 1.3rem; margin-bottom: 10px; }
+.scan-item {
+    display: flex; justify-content: space-between; font-size: 1.1rem;
+    padding: 10px 0; border-bottom: 1px solid var(--border-color);
+}
+.scan-item.scanned { color: var(--color-success); text-decoration: line-through; }
+.scan-item span:first-child { font-weight: 600; }
+.scan-item span:last-child { font-weight: 700; }
+.scan-actions { margin-top: auto; padding-top: 20px; }
+.scan-actions .btn { font-size: 1.2rem; padding: 15px; }
+
+
+/* ===================================== */
+/* 5. ESTILOS: NUEVO LOGIN (MÓVIL)       */
+/* ===================================== */
+
+/* Fondo de gradiente para el body de la pág de login */
+.login-page-body {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3b82f6 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 1.1rem;
-}
-.scan-target {
-    width: 60%;
-    height: 100px;
-    border: 2px dashed var(--color-danger);
-    opacity: 0.7;
+    height: 100vh;
 }
 
-.scan-details h3 {
+/* Tarjeta flotante con efecto "frosted glass" */
+.login-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px;
     text-align: center;
-    font-size: 1.3rem;
+    background: rgba(255, 255, 255, 0.15); /* Transparencia */
+    backdrop-filter: blur(10px); /* El efecto "frosted" */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     margin-bottom: 10px;
 }
-.scan-item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.1rem;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-.scan-item.scanned {
-    color: var(--color-success);
-    text-decoration: line-through;
-}
-.scan-item span:first-child { font-weight: 600; }
-.scan-item span:last-child { font-weight: 700; }
 
-.scan-actions {
-    margin-top: auto; /* Empuja los botones al fondo */
-    padding-top: 20px;
+.login-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-size: 1rem;
 }
-.scan-actions .btn {
-    font-size: 1.2rem;
+
+/* Contenedor para el icono + input */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .material-icons {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Estilos de los inputs */
+.login-card .form-group input[type="text"],
+.login-card .form-group input[type="password"] {
+    width: 100%;
+    padding: 15px 15px 15px 50px; /* Padding izquierdo para el icono */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Estilos del placeholder */
+.login-card .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Estilos en focus (al hacer clic) */
+.login-card .form-group input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+/* Mensaje de error */
+.form-error {
+    color: white;
+    background-color: rgba(200, 30, 30, 0.5);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+    display: none; /* Oculto por default */
+    border: 1px solid var(--color-danger);
+}
+
+/* Estilo del botón de login */
+.login-card .btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+    font-size: 1.1rem;
     padding: 15px;
+    margin-top: 10px;
+}
+.login-card .btn-primary:hover {
+    background-color: #f0f0f0;
 }

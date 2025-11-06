@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartFoot Login</title>
+    <!-- 1. Hoja de estilos maestra -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Iconos -->
-    <link href="[https://fonts.googleapis.com/icon?family=Material+Icons](https://fonts.googleapis.com/icon?family=Material+Icons)" rel="stylesheet">
+    <!-- 2. Iconos de Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<!-- 3. Clase especial en el BODY para el fondo -->
+<body class="login-page-body">
 
-    <div class="login-container">
+    <!-- El contenedor ahora es un "card" flotante -->
+    <div class="login-card">
         <h1>SmartFoot</h1>
+        <p>Bienvenido, Operador. Ingresa a tus misiones.</p>
         
-        <div class="form-group">
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" value="operador1">
+        <!-- Campo de Usuario con icono -->
+        <div class="form-group input-with-icon">
+            <span class="material-icons">person_outline</span>
+            <input type="text" id="usuario" value="operador1" placeholder="Usuario">
         </div>
         
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" value="1234">
+        <!-- Campo de Password con icono -->
+        <div class="form-group input-with-icon">
+            <span class="material-icons">lock_outline</span>
+            <input type="password" id="password" value="1234" placeholder="Contraseña">
         </div>
 
         <p class="form-error" id="error-msg">Usuario o contraseña incorrectos.</p>
@@ -31,9 +37,9 @@
     </div>
 
     <!-- 
-      Para el hackathon, la lógica de login será simulada en JS.
-      En un proyecto real, esto haría un fetch a un backend.
+      El JS es el mismo, la lógica de login no cambia.
+      El ID "login-btn" se encarga de todo.
     -->
-    <script src="/js/operador.js"></script>
+    <script src="../js/operador.js"></script>
 </body>
 </html>
