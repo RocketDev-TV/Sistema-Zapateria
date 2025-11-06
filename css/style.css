@@ -121,7 +121,7 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
 
 
 /* ===================================== */
-/* 4. ESTILOS: APP OPERADOR (MÓVIL) 	 */
+/* 4. ESTILOS: APP OPERADOR (MÓVIL)      */
 /* ===================================== */
 
 /* Contenedor general para la app móvil */
@@ -390,7 +390,7 @@ h3 { color: var(--text-color); margin-bottom: 0.5rem; }
 .login-card .btn-primary {
     background-color: white;
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 1.1rem; 
     padding: 15px;
     margin-top: 10px;
 }
