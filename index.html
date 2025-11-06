@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="login-page-body">
+
+    <div class="login-card">
+        <h1>SmartFoot</h1>
+        <p>Simulador de Roles</p>
+        
+        <div class="form-group">
+            <label for="user-type" class="login-label">Selecciona tu perfil:</label>
+            <div class="select-wrapper">
+                <select id="user-type">
+                    <option value="gerente">Gerente (Dashboard)</option>
+                    <option value="auxiliar">Auxiliar (Almacén)</option>
+                    <option value="vendedor">Vendedor (Caja)</option>
+                </select>
+                <span class="material-icons select-arrow">expand_more</span>
+            </div>
+        </div>
+
+        <div class="form-group input-with-icon">
+            <span class="material-icons">person_outline</span>
+            <input type="text" id="usuario" placeholder="usuario_simulado" disabled>
+        </div>
+        <div class="form-group input-with-icon">
+            <span class="material-icons">lock_outline</span>
+            <input type="password" id="password" placeholder="••••••••" disabled>
+        </div>
+
+        <button class="btn btn-primary btn-full-width" id="login-btn">
+            Ingresar
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

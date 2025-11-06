@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Surtido</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1 id="task-title">Surtir T-1001</h1>
+            <a href="operador_menu.html" class="logout-btn">
+                <span class="material-icons">arrow_back</span>
+            </a>
+        </header>
+
+        <main class="app-content task-detail-container">
+            
+            <div class="card task-header-card">
+                <h3>Destino: <span id="task-destino">Tienda 9</span></h3>
+                <p>Total de Productos: <span id="task-total-prods">2</span></p>
+            </div>
+
+            <h3>Productos a Surtir:</h3>
+            <ul class="task-list" id="item-list">
+                <!-- Items simulados -->
+                <li class="task-item-detailed" data-sku="SNK-001">
+                    <div class="item-info">
+                        <h4>Tenis Runner Pro</h4>
+                        <p>SKU: <strong>SNK-001</strong></p>
+                        <p>Ubicación: <strong>A-01-C</strong></p>
+                    </div>
+                    <span class="item-qty-badge" id="qty-SNK-001">0 / 1</span>
+                </li>
+                <li class="task-item-detailed" data-sku="BOT-456">
+                    <div class="item-info">
+                        <h4>Bota de Piel Clásica</h4>
+                        <p>SKU: <strong>BOT-456</strong></p>
+                        <p>Ubicación: <strong>B-03-A</strong></p>
+                    </div>
+                    <span class="item-qty-badge" id="qty-BOT-456">0 / 1</span>
+                </li>
+            </ul>
+
+            <!-- Input de escaneo (simulado) -->
+            <div class="scan-input-container">
+                <span class="material-icons">qr_code_scanner</span>
+                <input type="text" id="scan-input" placeholder="Escanear producto (ej: SNK-001)" autofocus>
+            </div>
+            
+            <!-- Botón de completar -->
+            <div class="scan-actions">
+                <button class="btn btn-primary btn-full-width" id="complete-task-btn" disabled>
+                    Completar Tarea
+                </button>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

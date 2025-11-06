@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Misiones</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Misiones Pendientes</h1>
+            <a href="../index.html" class="logout-btn">
+                <span class="material-icons">logout</span>
+            </a>
+        </header>
+
+        <main class="app-content">
+            <!-- Lista de tareas simuladas -->
+            <ul class="task-list" id="task-list">
+                <!-- Tarea 1: Surtir (generada por el bot) -->
+                <li class="task-item priority-high" onclick="location.href='surtir.html?task=T-1001'">
+                    <span class="material-icons task-icon">task_alt</span>
+                    <div class="task-info">
+                        <h3>Surtir Traspaso #T-1001</h3>
+                        <p>Urgente: Enviar a Tienda 9</p>
+                    </div>
+                </li>
+
+                <!-- Tarea 2: Recibir Pedido -->
+                <li class="task-item priority-normal" onclick="location.href='recibir.html?task=P-890'">
+                    <span class="material-icons task-icon">inventory_2</span>
+                    <div class="task-info">
+                        <h3>Recibir Pedido #P-890</h3>
+                        <p>De: CEDIS Central</p>
+                    </div>
+                </li>
+                
+                <!-- Tarea 3: Recibir Proveedor -->
+                <li class="task-item priority-low" onclick="location.href='recibir.html?task=F-12345'">
+                    <span class="material-icons task-icon">local_shipping</span>
+                    <div class="task-info">
+                        <h3>Recibir Proveedor</h3>
+                        <p>Factura: #F-12345</p>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Dashboard</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-header">
+        <h1>Diagnóstico de Crisis Logística (Simulado)</h1>
+        <a href="../index.html" class="logout-btn">
+            <span class="material-icons">logout</span>
+            Cerrar Sesión
+        </a>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="kpi-box">
+        <h3>Cobertura de Inventario</h3>
+        <div class="css-gauge">
+          <div class="css-gauge-inner-text">7.0 <span class="kpi-unit">Meses</span></div>
+        </div>
+        <p>Meta Saludable: ≤ 2 Meses</p>
+      </div>
+
+      <div class="kpi-box">
+        <h3>Calidad del Inventario (Total: 8.6M)</h3>
+        <div class="css-donut">
+          <div class="css-donut-legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: var(--color-danger);"></span>
+              En Riesgo (3.6M)
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: var(--color-success);"></span>
+              Sano (5.0M)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-box">
+        <h3>Rotación de Inventario (Anual)</h3>
+        <div class="kpi-big-number">3.5 <span class="kpi-unit">Vueltas</span></div>
+        <p>Meta: ≥ 6 Vueltas</p>
+      </div>
+      
+      <div class="kpi-box">
+        <h3>Tiempo Promedio de Recepción</h3>
+        <div class="kpi-big-number">45 <span class="kpi-unit">Min</span></div>
+        <p>Meta: ≤ 15 min</p>
+      </div>
+      
+      <div class="kpi-box">
+        <h3>Exactitud de Inventario (IRA)</h3>
+        <div class="kpi-big-number">91%</div>
+        <p>Meta: ≥ 99%</p>
+      </div>
+
+      <div class="kpi-box chart-large"> 
+        <h3>Tendencia de Recepción (Última semana)</h3>
+        <div style="text-align: center; margin-top: 50px;">
+             <span style="font-size: 5rem; font-weight: 700; color: var(--primary-color);">
+                42 <span class="kpi-unit" style="font-size: 2rem;">Min Promedio</span>
+             </span>
+             <p style="font-size: 1.1rem; color: var(--text-color-light); margin-top: 15px;">
+                La tendencia ha mejorado ligeramente. (Dato simulado)
+             </p>
+        </div>
+      </div>
+      </div>
+
+    <div id="chat-bubble">
+        <span class="material-icons">support_agent</span>
+        <span id="chat-notification"></span> 
+    </div>
+
+    <div class="chat-container" id="chat-widget-container">
+        <div class="chat-header">
+            <h3>Asistente de Decisión (FAQ)</h3>
+            <button id="close-chat" class="close-btn">&times;</button>
+        </div>
+        <div id="chatbox">
+            </div>
+        
+        <div class="chat-input-area">
+            <select id="faq-select">
+                <option value="">Selecciona una pregunta...</option>
+                <option value="1">¿Por qué el inventario está en 7.0 meses?</option>
+                <option value="2">¿Qué causa la baja Calidad del Inventario?</option>
+                <option value="3">¿Cómo afecta la Recepción lenta?</option>
+                <option value="4">¿Cuál es el plan para subir el IRA (91%)?</option>
+            </select>
+            <button class="btn btn-primary" id="sendButton" disabled>Enviar</button>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

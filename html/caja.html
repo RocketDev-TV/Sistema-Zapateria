@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Caja</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="caja-container">
+        <header class="app-header">
+            <h1>Punto de Venta</h1>
+            <a href="../index.html" class="logout-btn">
+                <span class="material-icons">logout</span>
+            </a>
+        </header>
+
+        <main class="caja-main">
+            <div class="caja-scan-bar">
+                <input type="text" id="caja-scan-input" placeholder="Escanear SKU (ej: SNK-001)" autofocus>
+                <button class="btn btn-primary" id="caja-add-btn">
+                    <span class="material-icons">add_shopping_cart</span>
+                </button>
+            </div>
+
+            <div class="caja-cart-items" id="caja-cart-items">
+                </div>
+
+            <footer class="caja-footer">
+                <div class="caja-totals">
+                    <h3>TOTAL:</h3>
+                    <span class="total-amount" id="caja-total-amount">$0.00</span>
+                </div>
+                <button class="btn btn-primary btn-full-width" id="caja-charge-btn">
+                    <span class="material-icons">payment</span>
+                    Cobrar
+                </button>
+            </footer>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <span class="material-icons">check_circle</span>
+            <h2>Venta Completada</h2>
+            <p>Total cobrado:</p>
+            <span class="total-amount-modal" id="modal-total-amount">$0.00</span>
+            <button class="btn btn-primary" id="modal-close-btn">Nueva Venta</button>
+        </div>
+    </div>
+
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

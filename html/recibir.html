@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFoot Recepción</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1 id="task-title">Cargando Tarea...</h1>
+            <a href="operador_menu.html" class="logout-btn">
+                <span class="material-icons">arrow_back</span>
+            </a>
+        </header>
+
+        <main class="app-content task-detail-container">
+            
+            <div class="card task-header-card">
+                <h3>Origen: <span id="task-origen">...</span></h3>
+                <p>Total Esperado: <span id="task-total-prods">...</span></p>
+            </div>
+
+            <h3>Productos a Verificar:</h3>
+            <ul class="task-list" id="item-list">
+                </ul>
+
+            <div class="scan-input-container">
+                <span class="material-icons">qr_code_scanner</span>
+                <input type="text" id="scan-input" placeholder="Escanear producto..." autofocus>
+            </div>
+            
+            <div class="scan-actions">
+                <button class="btn btn-primary btn-full-width" id="complete-task-btn" disabled>
+                    Completar Recepción
+                </button>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
