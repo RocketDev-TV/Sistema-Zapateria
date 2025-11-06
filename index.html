@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartFoot Login</title>
-    <!-- 1. Hoja de estilos maestra -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- 2. Iconos de Google -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material-Icons" rel="stylesheet">
 </head>
-<!-- 3. Clase especial en el BODY para el fondo -->
 <body class="login-page-body">
 
-    <!-- El contenedor ahora es un "card" flotante -->
     <div class="login-card">
         <h1>SmartFoot</h1>
         <p>Bienvenido, Operador. Ingresa a tus misiones.</p>
         
-        <!-- Campo de Usuario con icono -->
         <div class="form-group input-with-icon">
             <span class="material-icons">person_outline</span>
             <input type="text" id="usuario" value="operador1" placeholder="Usuario">
         </div>
         
-        <!-- Campo de Password con icono -->
         <div class="form-group input-with-icon">
             <span class="material-icons">lock_outline</span>
             <input type="password" id="password" value="1234" placeholder="Contraseña">
@@ -36,10 +32,6 @@
         </button>
     </div>
 
-    <!-- 
-      El JS es el mismo, la lógica de login no cambia.
-      El ID "login-btn" se encarga de todo.
-    -->
-    <script src="/js/operador.js"></script>
+    <script src="js/operador.js"></script>
 </body>
 </html>
