@@ -106,8 +106,16 @@ function initSurtirPage() {
         itemList.appendChild(li);
     });
 
-    // 4. Configurar botón de escaneo
-    document.getElementById("scan-button").addEventListener("click", () => simularEscaneo("SURTIDO"));
+    // 4. Configurar input de escaneo
+    const scanInput = document.getElementById("scan-input");
+    scanInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            procesarEscaneo(scanInput.value, "SURTIDO");
+            scanInput.value = ""; // Limpiar input
+            event.preventDefault(); // Evitar submit
+        }
+    });
+    scanInput.focus(); // Poner el foco en el input al cargar
 }
 
 /* --- LÓGICA DE PÁGINA DE RECEPCIÓN --- */
@@ -150,17 +158,26 @@ function initRecibirPage() {
         itemList.appendChild(li);
     });
 
-    // 4. Configurar botón de escaneo
-    document.getElementById("scan-button").addEventListener("click", () => simularEscaneo("RECEPCION"));
+    // 4. Configurar input de escaneo
+    const scanInput = document.getElementById("scan-input");
+    scanInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            procesarEscaneo(scanInput.value, "RECEPCION");
+            scanInput.value = ""; // Limpiar input
+            event.preventDefault(); // Evitar submit
+        }
+    });
+    scanInput.focus(); // Poner el foco en el input al cargar
 }
 
 /* --- LÓGICA DE ESCANEO (Común para ambas) --- */
-function simularEscaneo(tipoPagina) {
-    const skuEscaneado = prompt("Simulador de Escáner:\nEscriba el SKU a escanear:", "SKU-BOTA-12345");
-    if (!skuEscaneado) return;
+function procesarEscaneo(skuEscaneado, tipoPagina) {
+    if (!skuEscaneado) return; // No hacer nada si está vacío
 
     if (!productosPendientes[skuEscaneado]) {
         alert(`Error: El SKU "${skuEscaneado}" no pertenece a esta tarea.`);
+        // VIBRAR (simulado)
+        console.log("VIBRATE_ERROR");
         return;
     }
 
@@ -169,6 +186,7 @@ function simularEscaneo(tipoPagina) {
 
     // Incrementar el conteo
     item.escaneado++;
+    // SONIDO DE BEEP (simulado)
     console.log("BEEP!");
 
     if (tipoPagina === "SURTIDO") {
@@ -177,10 +195,9 @@ function simularEscaneo(tipoPagina) {
         badge.querySelector("span").innerText = `${item.escaneado} / ${item.total}`;
 
         if (item.escaneado === item.total) {
-            li.classList.add("scanned"); // "scanned" pone el badge verde
+            li.classList.add("scanned-ok"); // "scanned-ok" pone el badge verde
         } else if (item.escaneado > item.total) {
             alert(`¡Cuidado! Ya surtió ${item.escaneado} de ${item.total}.`);
-            // En un sistema real, esto podría bloquearse o requerir autorización
             badge.style.backgroundColor = "var(--color-danger)"; // Alerta visual
             badge.style.color = "white";
         }
@@ -216,7 +233,8 @@ function verificarFinTarea(tipoPagina) {
             }
         } else if (tipoPagina === "RECEPCION") {
             // En recepción, puede continuar incluso si hay discrepancias
-            // Por ahora, solo checamos si al menos se escaneó 1 de cada
+            // Para la demo, diremos que está "lista para finalizar"
+            // si al menos se escaneó 1 de cada
             if (productosPendientes[sku].escaneado === 0) {
                 tareaCompleta = false;
                 break;
@@ -225,15 +243,22 @@ function verificarFinTarea(tipoPagina) {
     }
 
     if (tareaCompleta) {
-        // Si la tarea está completa, cambiamos el botón a "Finalizar"
-        const scanButton = document.getElementById("scan-button");
-        scanButton.innerText = "Completar Tarea";
-        scanButton.style.backgroundColor = "var(--color-success)";
-        scanButton.onclick = () => {
-            alert("¡Tarea Completada!\n\nTodos los productos fueron procesados. Redirigiendo al menú.");
-            // En un proyecto real, aquí harías el FETCH al backend para
-            // actualizar la DB (ej. `UPDATE pedido_det SET cant_surt = ...`)
-            window.location.href = "operador_menu.html";
-        };
+        // Tarea completa, mostrar botón de Finalizar
+        const actionsDiv = document.querySelector(".task-actions");
+        // Evitar duplicados
+        if (!document.getElementById("finish-btn")) {
+            const finishButton = document.createElement("button");
+            finishButton.id = "finish-btn";
+            finishButton.className = "btn btn-success btn-full-width";
+            finishButton.innerText = "Completar Tarea";
+            finishButton.onclick = () => {
+                // En un proyecto real, aquí harías el FETCH al backend para
+                // actualizar la DB (ej. `UPDATE pedido_det SET cant_surt = ...`)
+                // Aquí también se validaría si hubo diferencias en la recepción
+                alert("¡Tarea Completada!\n\nTodos los productos fueron procesados. Redirigiendo al menú.");
+                window.location.href = "operador_menu.html";
+            };
+            actionsDiv.appendChild(finishButton);
+        }
     }
 }

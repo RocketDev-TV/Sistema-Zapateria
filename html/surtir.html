@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartFoot Surtido</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -31,31 +31,22 @@
             <h3>Productos a Surtir:</h3>
             <ul class="task-list" id="item-list">
                 <!-- Los items se agregarán dinámicamente con JS -->
-                <!-- 
-                Ejemplo de un item:
-                <li class="task-item-detailed" id="item-SKU-BOTA-12345">
-                    <div class="item-info">
-                        <h4>Bota Vaquera (SKU-BOTA-12345)</h4>
-                        <p>Ubicación: <strong>PASILLO A-01-B</strong></p>
-                    </div>
-                    <div class="item-qty-badge">
-                        <span>0 / 5</span>
-                    </div>
-                </li>
-                -->
             </ul>
 
-            <!-- Botones de Acción -->
-            <div class="task-actions">
-                <button class="btn btn-primary btn-full-width" id="scan-button">
-                    <span class="material-icons">qr_code_scanner</span>
-                    Escanear Producto
-                </button>
+            <!-- 
+              Input de Escaneo (Reemplaza el botón) 
+              Se queda pegado abajo gracias al CSS
+            -->
+            <div class="task-actions scan-input-container">
+                <span class="material-icons">qr_code_scanner</span>
+                <!-- 'autofocus' es clave para que el scanner funcione sin tocar la pantalla -->
+                <input type="text" id="scan-input" placeholder="Escanear producto..." autofocus>
+                <!-- Aquí aparecerá el botón de "Completar Tarea" -->
             </div>
             
         </main>
     </div>
 
-    <script src="/js/operador.js"></script>
+    <script src="../js/operador.js"></script>
 </body>
 </html>

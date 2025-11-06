@@ -31,31 +31,20 @@
             <h3>Productos a Verificar:</h3>
             <ul class="task-list" id="item-list">
                 <!-- Los items se agregarán dinámicamente con JS -->
-                <!-- 
-                Ejemplo de un item:
-                <li class="task-item-detailed verification" id="item-SKU-SANDALIA-001">
-                    <div class="item-info">
-                        <h4>Sandalia Dama (SKU-SANDALIA-001)</h4>
-                    </div>
-                    <div class="item-qty-verification">
-                        <span>Esperado: <strong>20</strong></span>
-                        <span>Recibido: <strong>0</strong></span>
-                    </div>
-                </li>
-                -->
             </ul>
 
-            <!-- Botones de Acción -->
-            <div class="task-actions">
-                <button class="btn btn-primary btn-full-width" id="scan-button">
-                    <span class="material-icons">qr_code_scanner</span>
-                    Escanear Producto
-                </button>
+            <!-- 
+              Input de Escaneo (Reemplaza el botón) 
+            -->
+            <div class="task-actions scan-input-container">
+                <span class="material-icons">qr_code_scanner</span>
+                <input type="text" id="scan-input" placeholder="Escanear producto..." autofocus>
+                <!-- Aquí aparecerá el botón de "Completar Tarea" -->
             </div>
             
         </main>
     </div>
 
-    <script src="/js/operador.js"></script>
+    <script src="../js/operador.js"></script>
 </body>
 </html>
