@@ -24,11 +24,11 @@
             <ul class="task-list">
 
                 <!-- 
-                  TAREA #1: CREADA POR EL BOT (Traspaso)
+                  TAREA #1: SURTIR PEDIDO (Traspaso)
                   Esto es lo que el Gerente aceptó en el dashboard.
                   DB: Es un registro en `pedido` (estado='CAPTURADO', origen=Tienda 14)
                 -->
-                <li class="task-item priority-high" onclick="location.href='operador_scan.html?task=surtido_traspaso'">
+                <li class="task-item priority-high" onclick="location.href='surtir.html?task=T-1001'">
                     <span class="material-icons task-icon">task_alt</span>
                     <div class="task-info">
                         <h3>Surtir Traspaso #T-1001</h3>
@@ -37,10 +37,10 @@
                 </li>
 
                 <!-- 
-                  TAREA #2: Recepción de Pedido
+                  TAREA #2: RECIBIR PAQUETE (Traspaso)
                   DB: Es un registro en `pedido` (estado='EN TRANSITO', destino=Tienda 14)
                 -->
-                <li class="task-item priority-normal" onclick="location.href='operador_scan.html?task=recibir_traspaso'">
+                <li class="task-item priority-normal" onclick="location.href='recibir.html?task=P-890'">
                     <span class="material-icons task-icon">inventory_2</span>
                     <div class="task-info">
                         <h3>Recibir Pedido #P-890</h3>
@@ -49,10 +49,10 @@
                 </li>
                 
                 <!-- 
-                  TAREA #3: Recepción de Proveedor (Entrada)
+                  TAREA #3: RECIBIR PAQUETE (Proveedor)
                   DB: Es un registro en `entrada` (estado='PENDIENTE')
                 -->
-                <li class="task-item priority-low" onclick="location.href='operador_scan.html?task=recibir_proveedor'">
+                <li class="task-item priority-low" onclick="location.href='recibir.html?task=F-12345'">
                     <span class="material-icons task-icon">local_shipping</span>
                     <div class="task-info">
                         <h3>Recibir Proveedor</h3>
